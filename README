@@ -1,0 +1,6 @@
+This repo contains some standard Makefiles
+
+Notes:
+The directory structure expected is /inc, /src and /lib
+For C the c99 standard is used
+For C++ the C++11 standard is used
