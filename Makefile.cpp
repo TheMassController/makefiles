@@ -19,7 +19,7 @@ LD=g++
 
 #compiling and linking options
 LDFLAGS=
-CFLAGS=-std=c++11 $(INC)
+CFLAGS=-std=c++11 $(INC) -Wall
 
 .PHONY: all clean debug profile
 
