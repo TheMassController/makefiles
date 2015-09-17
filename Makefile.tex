@@ -4,6 +4,7 @@ LATEXMK:=latexmk
 BIBTEX:=bibtex
 TARGET:=projectDocument.pdf
 MAINTEX:=$(subst pdf,tex,$(TARGET))
+ALLTEXFILES=$(wildcard *.tex)
 
 LATEXMKFLAGS=-pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make $<
 LATEXCLFLAGS=-CA
@@ -13,7 +14,7 @@ all: $(TARGET)
 %.bbl : %.aux
 	$(BIBTEX) $<
 
-$(TARGET) : $(MAINTEX)
+$(TARGET) : $(MAINTEX) $(ALLTEXFILES)
 	$(LATEXMK) $(LATEXMKFLAGS)
 
 clean:
